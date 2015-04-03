@@ -34,7 +34,9 @@ var focusCommentToggleElement = function(commentContainer) {
    /*
     * [-] [+] thing
     */
-   return commentContainer.find('.entry .tagline .expand').first().focus();
+   element = commentContainer.find('.entry .tagline .expand').first();
+   focusedComment = element.length ? element.focus() : focusedComment;
+   return focusedComment;
 };
 
 var focusNextComment = function(element) {
