@@ -11,13 +11,13 @@ $('body').on('keypress', function(key) {
             console.log('k');
             focusedComment = focusPreviousComment();
             break;
-        case 98: // b = 98
-            console.log('b');
-            // TODO
-            break;
         case 119: // w = 119
             console.log('w');
-            // TODO
+            focusedComment = focusNextChildComment();
+            break;
+        case 98: // b = 98
+            console.log('b');
+            focusedComment = focusPreviousChildComment();
             break;
         case 111: // o = 111
             console.log('o');
@@ -45,4 +45,16 @@ var focusPreviousComment = function(element) {
   element = element || focusedComment;
   var previousCommentContainer = element.closest('.thing').prevAll('.thing:first');
   return focusCommentToggleElement(previousCommentContainer);
+};
+
+var focusNextChildComment = function(element) {
+  element = element || focusedComment;
+  var nextChildCommentContainer = element.closest('.thing').find('.sitetable .thing').first();
+  return focusCommentToggleElement(nextChildCommentContainer);
+};
+
+var focusPreviousChildComment = function(element) {
+  element = element || focusedComment;
+  var previousChildCommentContainer = element.closest('.child').closest('.thing').first();
+  return focusCommentToggleElement(previousChildCommentContainer);
 };
