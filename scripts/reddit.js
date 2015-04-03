@@ -19,21 +19,26 @@ $(function() {
     switch(key.which) {
       case 106: // j = 106
         focusedComment = focusNextComment();
-      break;
+        break;
+
       case 107: // k = 107
         focusedComment = focusPreviousComment();
-      break;
+        break;
+
       case 119: // w = 119
-        case 108: // l = 108
+      case 108: // l = 108
         focusedComment = focusNextChildComment();
-      break;
+        break;
+
       case 98: // b = 98
-        case 104: // h = 104
+      case 104: // h = 104
         focusedComment = focusPreviousChildComment();
-      break;
+        break;
+
+      case 13: // return = 13
       case 111: // o = 111
         focusedComment.click();
-      break;
+        break;
     }
   });
 
