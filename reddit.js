@@ -2,6 +2,10 @@ var firstComment = $('.commentarea .sitetable .thing .entry .tagline .expand').f
 var focusedComment = firstComment.focus();
 
 $('body').on('keypress', function(key) {
+    if(document.activeElement.tagName === 'INPUT') {
+      // Don't mess with input elements
+      return;
+    }
     switch(key.which) {
         case 106: // j = 106
             console.log('j');
