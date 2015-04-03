@@ -1,12 +1,19 @@
 'use strict';
 
 $(function() {
+
   var firstComment = $('.sitetable .thing .entry .tagline .expand').first();
-  var focusedComment = firstComment.focus();
+  // Set focusedComment to null initially, so that it doesn't steal any default focus.
+  var focusedComment = null;
 
   $('body').on('keypress', function(key) {
     if(document.activeElement.tagName === 'INPUT') {
       // Don't mess with input elements
+      return;
+    }
+    if(!focusedComment) {
+      // Nothing is in focus right now, bring first comment in focus to start with.
+      focusedComment = firstComment.focus();
       return;
     }
     switch(key.which) {
