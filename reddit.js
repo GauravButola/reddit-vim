@@ -12,10 +12,12 @@ $('body').on('keypress', function(key) {
             focusedComment = focusPreviousComment();
             break;
         case 119: // w = 119
-            console.log('w');
+        case 108: // l = 108
+            console.log('l/w');
             focusedComment = focusNextChildComment();
             break;
         case 98: // b = 98
+        case 104: // h = 104
             console.log('b');
             focusedComment = focusPreviousChildComment();
             break;
