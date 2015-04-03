@@ -1,4 +1,4 @@
-var firstComment = $('.commentarea .sitetable .thing .entry .tagline .expand').first();
+var firstComment = $('.sitetable .thing .entry .tagline .expand').first();
 var focusedComment = firstComment.focus();
 
 $('body').on('keypress', function(key) {
@@ -66,3 +66,12 @@ var focusPreviousChildComment = function(element) {
   var previousChildCommentContainer = element.closest('.child').closest('.thing').first();
   return focusCommentToggleElement(previousChildCommentContainer);
 };
+
+var focusClickedComment = function(element) {
+  var commentContainer = element.closest('.thing');
+  return focusCommentToggleElement(commentContainer);
+};
+
+$('.thing.comment .entry').on('click',function() {
+  focusClickedComment($(this));
+});
