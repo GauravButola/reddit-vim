@@ -10,4 +10,4 @@ j  | Go to next sibling comment
 k  | Go to previous sibling comment
 w/l | Next child comment
 b/h | Previous child comment
-o/return | open or close comment
+return | open or close comment

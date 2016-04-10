@@ -7,7 +7,8 @@ $(function() {
   var focusedComment = null;
 
   $('body').on('keypress', function(key) {
-    if(document.activeElement.tagName === 'INPUT') {
+    var tag = document.activeElement.tagName;
+    if(/input|textarea/i.test(tag)) {
       // Don't mess with input elements
       return;
     }
@@ -33,11 +34,6 @@ $(function() {
       case 98: // b = 98
       case 104: // h = 104
         focusedComment = focusPreviousChildComment();
-        break;
-
-      case 13: // return = 13
-      case 111: // o = 111
-        focusedComment.click();
         break;
     }
   });
