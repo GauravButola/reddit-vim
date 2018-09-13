@@ -1,3 +1,7 @@
+# `<Deprecated>`
+
+This plugin is not maintained anymore since Reddit now natively supports the keybindings 🎊.
+
 # reddit-vim
 
 Small JS script packaged as chrome extension to provide basic Vim editor like bindings for reddit's comment section.
